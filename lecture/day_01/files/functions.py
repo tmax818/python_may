@@ -1,33 +1,22 @@
 ## functions.py
 ## demo
 
-def add(param1, param2): # define a function
-    print( param1 + param2 ) # prints the  param1 and param2 to the terminal
-    return param1 + param2 
+def add(param1, param2 = 10): # define a function
+    x = add(3,4)
+    print(param1 + param2)
+    return param1 + param2
 
-def divide(a,b):
-    print(a / b, a % b)
-    return a/b, a % b
 
-print(add(3,4))
-print(divide(10,2))
-print(divide(b = 2, a = 10))
+add(2)
 
-def greet(name="Python Programmer"):
-    print(f"Hello, {name}")
+print(add(2))
 
-greet("Arthur")
-greet()
-
-# def divide(numerator, denominator = 1):
-#     return numerator/denominator
-
-# print(divide(10))
-# print(divide(denominator = 2, numerator = 10))
 
 
 
 # # TODO function invocation
+
+
 
 # # TODO function_name('argument')
 

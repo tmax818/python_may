@@ -9,20 +9,29 @@ person_dict['address'] = address
 
 person_dict['age'] = 46
 
-print(person_dict)
 
-# students = [
-#          {'first_name':  'Michael', 'last_name' : 'Jordan'},
-#          {'first_name' : 'John', 'last_name' : 'Rosales'},
-#          {'first_name' : 'Mark', 'last_name' : 'Guillen'},
-#          {'first_name' : 'KB', 'last_name' : 'Tonel'}
-#     ]
-# for student in students:
-#     some_str = ""
-#     for k in enumerate(student.items()):
-#         print(k)
 
-# my_list = [1,2,3]
+person_dict['hobbies'] = []
 
-# my_list[5] = 9
-# print(my_list)
+person_dict['hobbies'].append('sleeping')
+person_dict['hobbies'].append('coding')
+
+# print(person_dict)
+# print(person_dict['hobbies'])
+
+
+students = [
+         {'first_name':  'Cesar', 'age' : 24},
+         {'first_name' : 'Tim', 'age' : 26},
+         {'first_name' : 'Yo Han', 'age' : 21},
+         {'first_name' : 'Alden', 'age' : 23},
+         {'first_name' : 'Devin', 'age' : 25}
+    ]
+
+new_old_students = []
+for student in students:
+     print(student['age'])
+     if student['age'] > 22:
+          new_old_students.append(student)
+
+print(new_old_students)
