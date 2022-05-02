@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tmax818/python_april.git"
+    "url": "git+https://github.com/tmax818/python_may.git"
   },
   "keywords": [],
   "author": "tmax818",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tmax818/python_april/issues"
+    "url": "https://github.com/tmax818/python_may/issues"
   },
-  "homepage": "https://github.com/tmax818/python_april#readme",
+  "homepage": "https://github.com/tmax818/python_may#readme",
   "dependencies": {
     "mocha": "^9.2.1"
   }
