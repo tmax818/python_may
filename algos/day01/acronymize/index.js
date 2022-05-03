@@ -26,20 +26,7 @@ const expected2 = "LFNYISN";
 // const str1_arg = " there's no free lunch - gotta pay yer way. ";
 // const expected1 = "TNFL-GPYW";
 function acronymize(str_param) {
-  // create a new str variable
-  let newStr = ""
-  // split the str
-  strArray = str_param.split(" ")
-  for(var i = 0; i < strArray.length; i++){
-    console.log(strArray)
-    // console.log(strArray[i].charAt(0).toUpperCase())
-    newStr += strArray[i].charAt(0).toUpperCase()
-  }
-  // parse/iterate the input from .split
-  // only return the first letters
-  console.log(i)
-  return newStr
 }
-// acronymize(str1_arg)
+
 console.log(acronymize(str1_arg))
-// console.log(acronymize(str2_arg))
+console.log(acronymize(str2_arg))
