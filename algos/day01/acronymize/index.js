@@ -26,6 +26,16 @@ const expected2 = "LFNYISN";
 // const str1_arg = " there's no free lunch - gotta pay yer way. ";
 // const expected1 = "TNFL-GPYW";
 function acronymize(str_param) {
+  let newStr = ""
+  let strArr = str_param.split(' ')
+  for(let i = 0; i < strArr.length; i++) {
+
+    if(strArr[i][0] !== undefined){
+
+      newStr += strArr[i][0]
+    }
+  }
+  return newStr.toUpperCase()
 }
 
 console.log(acronymize(str1_arg))
