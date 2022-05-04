@@ -1,70 +1,88 @@
 
+# TODO user story: As an admin user of the dojo tracker I would like to keep track of which ninjas and instructors are assigned to a dojo. Each dojo should be able to modify its motto if so desired.
 
+dojos = [
+    {'id': 1, 'location': 'Burbank', 'capacity': 30},
+    {'id': 2, 'location': 'San Jose', 'capacity': 30}
+]
+
+ninjas = [
+        {'id': 1, 'name': 'Aaron', 'dojo_id': 1},
+        {'id': 1, 'name': 'Cesar', 'dojo_id': 2},
+        {'id': 1, 'name': 'Devin', 'dojo_id': 1},
+        {'id': 1, 'name': 'Tim', 'dojo_id': 2},
+        {'id': 1, 'name': 'Frank', 'dojo_id': 2},
+]
+
+instructors = [
+    {'id': 1, 'name': 'Davina', 'languages': ['JS', 'CSS', 'HTML'], 'dojo_id': 2},
+    {'id': 2, 'name': 'Tyler', 'languages': ['Python'], 'dojo_id': 1},
+    {'id': 3, 'name': 'Moses', 'languages': [], 'dojo_id': 1}
+]
 class Instructor:
+    def __init__(self, name, languages, dojo_id) -> None:
+        self.name = name
+        self.languages = languages
+        self.dojo_id = dojo_id
+        pass
 
-    def __init__(self, instructor_data):
-        self.name = instructor_data['name']
-        self.qualified = instructor_data['qualified']
-
-
+## TODO make a dojo class
 class Dojo:
-
-    motto = "strength through struggle!!"
-    
-    def __init__(self, location, instructor_data):
+    motto = "Strength through struggle."
+## TODO dojo attr: location, capacity and id
+    def __init__(self, location, capacity, id, instructor) -> None:
         self.location = location
+        self.capacity = capacity
         self.ninjas = []
-        self.instructor = Instructor(instructor_data)
+        self.id = id
+        self.instructor = instructor
 
-    def register_ninja(self, ninja):
+    def add_ninja(self, ninja):
         self.ninjas.append(ninja)
 
     @classmethod
-    def display_motto(cls):
+    def change_motto(cls, new_motto):
+        cls.motto = new_motto
+    
+    @classmethod
+    def show_motto(cls):
         print(cls.motto)
 
-    @classmethod
-    def update_motto(cls):
-        cls.motto = "strenght through 20 minutes of struggle!!"
-
     @staticmethod
-    def validate_ninja(ninja):
+    def validate_instructor(instructor):
         is_valid = True
-        if ninja.age <= 18:
+        if len(instructor['languages']) < 1:
             is_valid = False
         return is_valid
 
 
+## TODO methods: display languages taught, show location, display instructor, register_ninjas
+
+## TODO make a instructor class
+## TODO also need instructors: name, languages, assigned to dojo, 
+# TODO methodsstart class, give assignments
+
+
+## TODO make a ninja class: name, id, assigned to dojo
 class Ninja:
-  
-    def __init__(self, name, age):
+
+    def __init__(self, name) -> None:
         self.name = name
-        self.age = age
+## TODO methods: study
 
-tyler = {'name': 'Tyler', 'qualified': False}
-ed = {'name': 'Ed', 'qualified': True}
 
-dojo1 = Dojo('Burbank', tyler)
-dojo2 = Dojo('San Jose', ed)
 
-ninja1 = Ninja('Cam', 24)
-ninja2 = Ninja('Ben', 26)
-ninja3 = Ninja('Aaron', 23)
-ninja4 = Ninja('Junior', 16)
+instructor1 = Instructor('Tyler', ['Python'], 1)
+Dojo.change_motto("Strength through 20 minutes of struggle.")
+Dojo.show_motto()
+ninja1 = Ninja('Frank')
+dojo1 = Dojo('Burbank', 15, 1, instructor1)
+print("is_valid: ", dojo1.validate_instructor(instructors[-1]))
 
-if not Dojo.validate_ninja(ninja4):
-    print("Sorry, too young")
-else:
-    dojo1.register_ninja(ninja4)
+dojo1.add_ninja(ninja1)
+print(dojo1)
+print(dojo1.location)
 
-dojo1.register_ninja(ninja1)
-print(dojo1.ninjas)
+def add(a:int,b:int) -> int:
+    return a+b
 
-Dojo.display_motto()
-
-print(dojo1.motto)
-
-Dojo.update_motto()
-Dojo.display_motto()
-
-print(dojo1.motto)
