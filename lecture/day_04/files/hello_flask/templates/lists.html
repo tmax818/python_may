@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- based on the folder structure on the right -->
+<!-- linking a css style sheet -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<!-- linking a javascript file -->
+<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+<!-- linking an image -->
+
+
+
+    <title>lists</title>
+</head>
+<body>
+
+    {% for student in students  %}
+        <p>{{student.name}} is {{student.age}} years old...</p>
+    {% endfor %}
+
+    {% for number in random_numbers  %}
+        {% for i in range(5)  %}
+        <h1>{{number}}</h1>
+        {% endfor %}
+    {% endfor %}
+    <h1>lists</h1>
+
+    <p>This is my new app!!</p>
+    <a href="about">about me</a>
+</body>
+</html>
