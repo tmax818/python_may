@@ -33,11 +33,11 @@ const expected3 = {};
  *    from the given arr and the values are the amnt of times that item occurs.
  */
 function frequencyTableBuilder(arr) {
-  // create an empty object to hold the count key will be the array element value will be the elements count
+  // create an empty object to hold the count. key will be the array element, value will be the element's count.
   // loop through the array 
     // check if the key is in the object
-    // if not add to the object
-    // if it is add to the count
+    // if not, add to the object
+    // if it is, increment to the count
   //return the object
 }
 
