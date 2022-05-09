@@ -34,12 +34,24 @@ const expected3 = {};
  */
 function frequencyTableBuilder(arr) {
   // create an empty object to hold the count. key will be the array element, value will be the element's count.
-  // loop through the array 
-    // check if the key is in the object
-    // if not, add to the object
-    // if it is, increment to the count
+  var count = {}
+  // loop through the array
+  for (const char of arr) {
+    // check if the key is in the object = count
+    if(!count[char]){
+      // if not, add to the object
+      count[char] = 1
+    }else {
+      // if it is, increment to the count
+      count[char]++
+    }
+  }
   //return the object
+return count
 }
 
+// console.log("arr1 returns", frequencyTableBuilder(arr1))
+// console.log("arr2 returns:",frequencyTableBuilder(arr2))
+// console.log("arr3 returns:",frequencyTableBuilder(arr3))
 
-
+module.exports = frequencyTableBuilder
