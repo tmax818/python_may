@@ -11,6 +11,7 @@
 <body>
     <div class="container">
         <div class="float-end mt-3 mb-3">
+          <h1>Welcome {{session['first_name']}}</h1>
             <a class="btn btn-danger" href="/logout">logout</a>
             <a class="btn btn-secondary" href="/recipes">home</a>
         </div>
@@ -29,6 +30,9 @@
             <label for="instructions">instructions:</label>
             <input type="text" name="instructions"  class="form-control">
         </div>
+        <label for="start">Start date:</label>
+
+<input type="date" id="start" name="date_made">
         <div class="form-check">
             <h1>Under 30 Minutes</h1>
             <input class="form-check-input" type="radio" name="under_30" id="exampleRadios1" value="1" checked>

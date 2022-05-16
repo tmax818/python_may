@@ -10,10 +10,11 @@
 <body>
     <div class="container">
         <div class="float-end mt-3 mb-3">
+            <h1>Welcome {{session['first_name']}}</h1>
             <a class="btn btn-danger" href="/logout">logout</a>
             <a class="btn btn-secondary" href="/recipes">home</a>
         </div>
-        <h2 class="text-center">recipe {{recipe.id}}</h2>
+        <h2 class="text-center">recipe {{recipe.name}}</h2>
         <p>column1 {{recipe.name}}</p>
         <p>column2: {{recipe.description}}</p>
         <p>column3: {{recipe.instructions}}</p>

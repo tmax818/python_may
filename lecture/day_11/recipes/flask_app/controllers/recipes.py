@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, session
 from flask_app import app
 from flask_app.models.recipe import Recipe
 
@@ -19,7 +19,9 @@ def create_recipe():
 # TODO READ ALL
 @app.route('/recipes')
 def recipes():
-    return render_template("recipes.html",recipes=Recipe.get_all())
+    if 'user_id' not in session:
+        return redirect('/logout')
+    return render_template("recipes.html",recipes=Recipe.get_all_with_users())
 
 # TODO READ ONE
 @app.route('/recipe/show/<int:id>')

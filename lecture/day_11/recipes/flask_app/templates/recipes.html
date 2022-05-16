@@ -9,6 +9,7 @@
     <title>recipes</title>
 </head>
 <body>
+    {{recipes[0].user_id}}
     <div class="container">
         <h1>Welcome {{session['first_name']}}</h1>
         <div class="row"></div>
@@ -37,8 +38,10 @@
                     <td>{{ recipe.created_at.strftime("%b %d %Y") }}</td>
                     <td>
                         <a href="/recipe/show/{{ recipe.id }}">Show</a> |
+                        {% if recipe.user_id == session['user_id'] %}
                         <a href="/recipe/edit/{{ recipe.id }}">Edit</a> |
                         <a href="/recipe/destroy/{{ recipe.id }}">Delete</a>
+                        {% endif %}
                     </td>
                 </tr>
                 {% endfor %}
