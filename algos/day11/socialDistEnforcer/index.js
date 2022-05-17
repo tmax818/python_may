@@ -18,12 +18,27 @@ const expected3 = true;
 const queue4 = [];
 const expected4 = true;
 
-/**
- * Determines whether each occupied space in the line of people is separated by
- * 6 empty spaces.
- * - Time: O(?).
- * - Space: O(?).
- * @param {Array<0|1>} queue
- * @returns {Boolean}
- */
-function socialDistancingEnforcer(queue) {}
+function socialDistancingEnforcer(queue) {
+    if(queue.length === 0){
+        return true
+    }
+    let count = 0;
+    let FirstPersonSeen = false;
+    for(let i = 0; i < queue.length; i++){
+        if(queue[i] === 0){
+            count++
+        } else {
+            if(FirstPersonSeen && count < 6){
+                return false
+            }
+            FirstPersonSeen = true
+            count = 0
+        }
+    }
+    return true
+}
+
+console.log(socialDistancingEnforcer(queue1))
+console.log(socialDistancingEnforcer(queue2))
+console.log(socialDistancingEnforcer(queue3))
+console.log(socialDistancingEnforcer(queue4))
