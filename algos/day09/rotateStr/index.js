@@ -21,6 +21,9 @@ const expected4 = "orldHello W";
 
 const rotateAmnt5 = 13;
 const expected5 = "ldHello Wor";
+
+const rotateAmnt6 = 11;
+const expected6 = "Hello World";
 /* 
 Explanation: this is 2 more than the length so it ends up being the same
 as rotating it 2 characters because after rotating every letter it gets back
@@ -37,4 +40,19 @@ to the original position.
  *    right.
  * @returns {string} The string rotated by the given amount.
  */
-function rotateStr(str, amnt) {}
+function rotateStr(strParam, amnt) {
+  // console.log(strParam.slice(-(amnt)))
+  // console.log(strParam.slice(0, strParam.length - amnt))
+  amnt = amnt % strParam.length
+  return (strParam.slice(-(amnt))) + (strParam.slice(0, strParam.length - amnt)) 
+  // for(let i = 0; i < strParam.length; i++){
+
+  // }
+}
+
+// console.log(rotateStr(str, rotateAmnt1))
+// console.log(rotateStr(str, rotateAmnt2))
+// console.log(rotateStr(str, rotateAmnt3))
+// console.log(rotateStr(str, rotateAmnt4))
+console.log(rotateStr(str, rotateAmnt5))
+// console.log(rotateStr(str, rotateAmnt6))
