@@ -33,4 +33,36 @@ const expected5 = [5, 1];
  * @param {Array<number>} nums Test
  * @returns {Array<number>} Mode or modes in any order.
  */
-function mode(nums) {}
+function mode(nums) {
+  if(nums.length < 2){
+    return nums
+  }
+
+  let modeObj = {}
+  let myMode = []
+  for(let i = 0; i < nums.length; i++){
+    if(!modeObj[nums[i]]){
+      modeObj[nums[i]] = 1
+    } else {
+      modeObj[nums[i]] += 1
+    }
+  }
+
+  let maxVal = Math.max(...Object.values(modeObj))
+  // for(let j = 0; j < modeObj.length; j++){
+  //   if(modeObj)
+  // } 
+
+  for(let obj in modeObj){
+    if(modeObj[obj] === maxVal && maxVal > 1){
+      myMode.push(parseInt(obj))
+    }
+  } 
+  return myMode
+}
+
+console.log(mode(nums1))
+console.log(mode(nums2))
+console.log(mode(nums3))
+console.log(mode(nums4))
+console.log(mode(nums5))
