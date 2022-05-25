@@ -22,4 +22,39 @@ const expected3 = 0;
  * @param {number} num
  * @returns {number}
  */
-function recursiveSigma(num) {}
+function recursiveSigma(num) {
+    if(num < 1){
+        return 0
+    }
+    return num + recursiveSigma(num - 1)
+
+}
+
+console.log(recursiveSigma(num1))
+// console.log(recursiveSigma(num2))
+// console.log(recursiveSigma(num3))
+
+
+
+// 5 + recursiveSig(4)
+// 4 + recursiveSig(3)
+//     3 + recursiveSig(2)
+//         2 + recursiveSig(1)
+//             1 + recursiveSig(0)
+//                 0 is returned - base case reached, can start summing now
+//                 - call stack "unwinds" now with .pop LIFO (matching indentation)
+//             1 + 0 = 1 <- this sum becomes the right side of the next addition
+//         2 + 1 = 3
+//     3 + 3 = 6
+// 4 + 6 = 10
+// 5 + 10 = 15
+
+
+    // if(num < 0){
+    //     return 0
+    // }
+    // let sum = 0;
+    // for(let i = 1; i <= num; i++){
+    //     sum += i
+    // }
+    // return sum
